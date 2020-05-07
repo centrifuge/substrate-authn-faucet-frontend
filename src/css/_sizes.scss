@@ -1,0 +1,29 @@
+// Spacing
+// between primary and secondary text
+$mobile-tiny-space: 5px;
+$desktop-tiny-space: 5px;
+
+// within elements
+$mobile-small-space: 15px;
+$desktop-small-space: 20px;
+
+// between elements within a component
+$mobile-regular-space: 20px;
+$desktop-regular-space: 40px;
+
+// between components
+$mobile-large-space: 30px;
+$desktop-large-space: 60px;
+
+// between a group of components
+$mobile-extra-large-space: 60px;
+$desktop-extra-large-space: 100px;
+
+$border-radius: 3px;
+$border-radius-large: 6px;
+$border-width: 3px;
+
+
+$menu-height-desktop: 95px;
+$menu-height-mobile-logged-out: 75px;
+$menu-height-mobile-logged-in: 125px;

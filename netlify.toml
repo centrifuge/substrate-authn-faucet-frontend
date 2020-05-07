@@ -1,0 +1,11 @@
+[build]
+  publish = "build/"
+  command = "npm run build"
+[context.production]
+  environment = { REACT_APP_API_HOST = "https://d1fc9ef5.ngrok.io", NODE_VERSION = "12.12.0",REACT_APP_GITHUB_CLIENT_ID='bd96258260f769a56370', REACT_APP_REDIRECT_URI='https://centrifuge-demo.netlify.app/github/callback', REACT_APP_POLKASCAN_URI= 'https://polkascan.io/pre/centrifuge-amber-cc2/transaction/' }
+
+[[redirects]]
+  from = "/github/callback"
+  to = "/"
+  status = 200
+  force = true

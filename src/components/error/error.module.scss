@@ -1,0 +1,23 @@
+@import '../../css/utils';
+
+
+.error {
+    h1 {
+        font-family: $font-family;
+        font-size: $font-size-desktop-h1;
+        color: $black;
+    }
+    h2 {
+        font-family: $font-family;
+        font-size: $font-size-desktop-h2;
+        color: $black;
+    }
+  
+    min-height: 500px;
+    height: 500px;
+    align-content: center;
+    width: 80%;
+    padding-top: 4%;
+    padding-left: 10%;
+}
+  

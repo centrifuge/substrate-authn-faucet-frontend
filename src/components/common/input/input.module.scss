@@ -1,0 +1,254 @@
+@import '../../../css/utils';
+
+.input {
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  margin-bottom: $mobile-small-space;
+
+  input {
+    height: 43px;
+    width: 100%;
+    display: block;
+    font-size: $font-size-mobile-small-body;
+    line-height: $line-height;
+    color: $black;
+    border: 1px solid $black;
+    outline: none;
+    border-radius: $border-radius;
+    padding: $mobile-tiny-space * 2;
+    transition: 0.3s ease-in-out;
+    &:focus {
+      color: $black;
+      border: 1px solid $black;
+    }
+
+    &.error {
+      color: $red;
+      border: 2px solid $dark-red;
+    }
+  }
+
+  .subtext {
+    font-size: 12px;
+    padding-top: 10px;
+  }
+  .subtext-hide {
+    line-height: 10px;
+    height: 25px;
+  }
+}
+
+.input-disabled {
+  background-color: $darkest-grey;
+  color: $black;
+  // opacity: 0.7;
+}
+
+.black {
+  color: $black;
+}
+
+.rose {
+  color: $rose;
+}
+
+.white {
+  color: $white;
+}
+
+.darkest-blue {
+  color: $darkest-blue;
+}
+
+.label {
+  width: 100%;
+  display: block;
+  font-size: $font-size-mobile-small-body;
+  line-height: $line-height;
+  margin-bottom: $mobile-tiny-space;
+  text-align: left;
+
+  @include mq($from: tablet) {
+    font-size: $font-size-mobile-regular-body;
+  }
+
+  @include mq($from: desktop) {
+    font-size: $font-size-mobile-small-body;
+  }
+}
+
+.textfield {
+  width: 100%;
+  margin-top: 2px !important;
+  background-color: #E4E4E5;
+}
+
+.checkbox {
+  margin-bottom: 2px;;
+  display: flex;
+  align-items: flex-start;
+  .root {
+    padding: 4px 6px 6px 12px !important;
+    &.checked {
+      color: $darkest-green;
+    }
+  }
+
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.7;
+    // background-color: $darkest-grey;
+  }
+  
+  .box {
+    // background-color: $off-white;
+    border-radius: 3px;
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    font-size: 10px;
+    color: $black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $black;
+    
+    &.disabled {
+      background-color: $darkest-grey;
+      color: $white !important;
+    }
+
+    &.error {
+      border: 1px solid $red;
+    }
+  }
+
+  .label {
+    display: inline;
+    margin: 0;
+    vertical-align: middle;
+  }
+
+  .content {
+    margin-left: $mobile-tiny-space;
+    display: flex;
+    flex-direction: column;
+  }
+
+}
+
+.select {
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  margin-bottom: $mobile-small-space;
+
+  &:focus {
+    outline: none;
+  }
+
+  .wrapper {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: relative;
+    width: 100%;
+
+    .header {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      height: 43px;
+      border: 1px solid $white;
+      border-radius: $border-radius;
+      cursor: default;
+      position: relative;
+      background-color: $white;
+
+      &.error {
+        color: $red;
+        border: 2px solid $dark-red;
+      }
+
+      .header-title {
+        font-weight: 300;
+        font-size: $font-size-mobile-small-body;
+        margin: 2px 20px;
+        margin-right: 30px;
+        color: $darkest-blue;
+      }
+
+      .chevron {
+        margin-right: 20px;
+      }
+    }
+
+    .list {
+      z-index: 10;
+      position: absolute;
+      width: 100%;
+      border: 1px solid $white;
+      border-top: none;
+      border-bottom-right-radius: $border-radius;
+      border-bottom-left-radius: $border-radius;
+      background-color: $white;
+      -webkit-box-shadow: 0 2px 5px -1px $darkest-blue;
+              box-shadow: 0 2px 5px -1px $darkest-blue;
+      font-weight: 700;
+      padding: 15px 0;
+      max-height: 215px;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+}
+
+.option {
+  width: 100%;
+  color: $dark-blue;
+  font-size: $font-size-mobile-small-body;
+  padding: 8px 10px;
+  line-height: $line-height;
+  cursor: default;
+  display: inline-block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  &:hover {
+    color: $white;
+    background-color: $dark-blue;
+  }
+}
+
+.chevron-up {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid $black;
+}
+
+.chevron-down {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid $black;
+}
+
+.error-message {
+  color: $red;
+  font-size: $font-size-desktop-tiny-body;
+  line-height: $line-height;
+  margin-top: $mobile-tiny-space;
+  width: 100%;
+  height: 25px;
+}

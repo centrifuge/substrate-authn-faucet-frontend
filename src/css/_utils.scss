@@ -1,0 +1,17 @@
+@import "colors";
+@import "reset";
+@import "text";
+@import "sizes";
+@import "media-queries";
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: $font-family;
+  height: 100vh;
+  margin: 0;
+}

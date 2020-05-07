@@ -1,0 +1,2 @@
+# Redirects/Rewrites from what the browser requests to what we serve
+/github/callback  / 200

@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=Prompt');
+
+@import "./css/utils.scss";
+
+.app {
+  width: 100%;
+}
+
+.main {
+  background-color: #ffffff;
+}
+
+.content {
+  margin-top: -20px;
+  display: flex;
+  flex-direction: row;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  // text-align: center;
+  flex: 1
+}
+
+.tripleColumn {
+  display: flex;
+  flex-direction: column;
+  flex: 9
+}
+
+
+.doubleColumn {
+  display: flex;
+  flex-direction: column;
+  flex: 4
+}
+
+.link {
+  color: #61dafb;
+}
+
+.pageHeader {
+  background-image: linear-gradient(270deg, #0092B6 0%, #00597F 100%);
+  height: 124px;
+  width: 100%;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.titleDiv {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-right:40px;
+  font-size: 32px;
+  color: #ffffff;
+}
+
+.leftsidebar{
+  background: $dark-slate-gray;
+  min-width:10%;
+  width:10%;
+}

@@ -1,0 +1,22 @@
+@import "../../css/utils.scss";
+
+.footer {
+  min-height: 62px;
+  display: flex;
+  background: $off-white;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-top: 12px;
+  color: $black;
+  h1 {
+    font-family:  $font-family;
+    font-size: $font-size-mobile-h2;
+  }
+  justify-content: center;
+}
+
+.left{
+  background: $off-white;
+  min-width:10%;
+  width:10%;
+}
