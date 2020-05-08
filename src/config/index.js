@@ -6,6 +6,7 @@ const dev = {
   REDIRECT_URI: 'http://localhost:8000/github/callback',
   POLKASCAN_URI: 'https://polkascan.io/pre/centrifuge-amber-cc2/transaction/'
 };
+
 const prod = {
   API_HOST: process.env.API_HOST,
   GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID,
