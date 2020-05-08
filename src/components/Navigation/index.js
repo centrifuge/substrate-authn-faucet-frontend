@@ -1,6 +1,5 @@
 import React from 'react';
 import { Box, Button, Layer as GrommetLayer, ResponsiveContext } from 'grommet';
-// import { StaticQuery, graphql, navigate } from 'gatsby';
 import styled, { css } from 'styled-components';
 import { breakpointStyle } from 'grommet/utils';
 import { X } from 'styled-icons/feather/X';
@@ -39,7 +38,6 @@ const BrandLink = () => (
   <div
     onContextMenu={e => {
       e.preventDefault();
-      // navigate('/design');
     }}
   >
     <NavLink to='/'>

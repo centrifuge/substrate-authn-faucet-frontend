@@ -99,7 +99,7 @@ const custom = {
       Other: '#C2DBFF',
       placeholder: '#000'
     },
-    
+
     breakpoints: { ...breakpoints },
     deviceBreakpoints: {
       phone: 'small',
@@ -151,7 +151,7 @@ const custom = {
                   ${props.signup && props.dark ? 'black' : '#fff'};
                 border-radius: 0;
                 padding-bottom: calc(11px - 1px);
-                
+
                 &:focus {
                   box-shadow: none;
                   border-color: none;
@@ -245,31 +245,13 @@ const custom = {
 
          @media only screen and (min-width: 769px) {
             font-size: 14px;
-            line-height: 24px;            
+            line-height: 24px;
          }
       }
      `
   },
   text: textSizes,
-  // grid: {
-  //   extend: props => css`
-  //     ${props.staggered &&
-  //       css`
-  //         ${breakpointStyle(
-  //           custom.breakpoints.small,
-  //           css`
-  //             display: flex;
-  //             flex-direction: column;
-  //           `
-  //         )}
-  //
-  //         ${props.reversed &&
-  //           css`
-  //             flex-direction: column-reverse;
-  //           `}
-  //       `}
-  //   `
-  // },
+
   anchor: {
     fontWeight: props =>
       props.bold ? 'var(--fw-demibold)' : 'var(--fw-regular)',

@@ -74,7 +74,6 @@ class CheckBoxInput extends Component {
       className,
       id,
       label,
-      // labelColor,
       isDisabled,
       value,
       placeholder,

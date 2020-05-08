@@ -126,7 +126,6 @@ SelectSearch.defaultProps = {
   isDisabled: false,
   isRequired: false,
   reset: false,
-  // variant: 'filled',
   extraErrors: [],
   className: '',
   placeholder: '',
