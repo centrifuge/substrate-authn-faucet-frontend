@@ -167,7 +167,7 @@ class Signup extends Component {
               </Box>
             </Box>
 
-            <Box wrap pad={{ top: 'medium', left: 'small' }} align="start" gap="small">
+            <Box wrap pad={{ top: 'medium', left: 'none' }} align="start" gap="small">
               <AxisTheme>
                 <CheckBox
                   id='toc_and_privacy'
@@ -183,12 +183,12 @@ class Signup extends Component {
               </AxisTheme>
             </Box>
 
-            <Box pad={{ top: 'medium', left: 'medium' }} align="start" gap="large">
+            <Box pad={{ top: 'medium', left: 'none' }} align="start" gap="large">
               <Box direction="row" wrap align="start" gap="large">
                 <Text>* This faucet is not currently available for US Citizens or Residents or Residents of China or South Korea</Text>
               </Box>
             </Box>
-            <Box pad={{ top: 'xxsmall', left: 'medium' }} align="start" gap="large">
+            <Box pad={{ top: 'xxsmall', left: 'none' }} align="start" gap="large">
               <Box direction="row" wrap align="start" gap="large">
                 <Text>** if you don&apos;t have Centrifuge Chain address, create one using our documentation</Text>
               </Box>
