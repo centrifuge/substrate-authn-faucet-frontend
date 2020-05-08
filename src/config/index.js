@@ -7,10 +7,10 @@ const dev = {
   POLKASCAN_URI: 'https://polkascan.io/pre/centrifuge-amber-cc2/transaction/'
 };
 const prod = {
-  API_HOST: process.env.REACT_APP_API_HOST,
-  GITHUB_CLIENT_ID: process.env.REACT_APP_GITHUB_CLIENT_ID,
-  REDIRECT_URI: process.env.REACT_APP_REDIRECT_URI, // 'https://centrifuge-demo.netlify.app/github/callback',
-  POLKASCAN_URI: process.env.REACT_APP_POLKASCAN_URI //'https://polkascan.io/pre/centrifuge-amber-cc2/transaction/'
+  API_HOST: process.env.API_HOST,
+  GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID,
+  REDIRECT_URI: process.env.REDIRECT_URI, // 'https://host.domain/github/callback',
+  POLKASCAN_URI: process.env.POLKASCAN_URI //'https://polkascan.io/pre/centrifuge-amber-cc2/transaction/'
 };
 
 const config =
