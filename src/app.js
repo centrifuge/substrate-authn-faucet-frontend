@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import 'typeface-roboto';
 import PropTypes from 'prop-types';
-import Theme from './components/Theme';
 import Navigation from './components/Navigation';
-import Container from './components/Container';
 import AppLoader from './components/AppLoader';
 import Footer from './components/Footer';
 import Router from './router/router.container';
-import styles from './app.module.scss';
+import {AxisTheme as Theme} from '@centrifuge/axis-theme';
 
 class App extends Component {
   constructor(props) {
@@ -17,18 +15,16 @@ class App extends Component {
   render() {
     const { login, isLoading } = this.props;
     return (
-      <div>
-        <Theme>
+      <Theme>
+        <div>
+
           <Navigation />
-          <Container>
-            <div className={styles.row}>
-              {isLoading && <AppLoader></AppLoader>}
-              <Router login={login} />
-            </div>
-          </Container>
+          {isLoading && <AppLoader></AppLoader>}
+          <Router login={login} />
           <Footer />
-        </Theme>
-      </div>
+        </div>
+
+      </Theme>
     );
   }
 }

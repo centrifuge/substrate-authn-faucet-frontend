@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
-// import { Link } from 'gatsby';
 
 const unstyledLinkStyles = css`
   color: inherit;
@@ -21,9 +20,6 @@ const unstyledLinkStyles = css`
 `;
 
 
-// export const StyledGatsbyLink = styled(Link)`
-//   ${props => props.unstyled ? unstyledLinkStyles : ''}
-// `;
 
 export const StyledGatsbyLink = styled.a`
   ${props => props.unstyled && unstyledLinkStyles}

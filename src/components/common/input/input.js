@@ -7,7 +7,8 @@ import { getCurrentError } from './helpers.js';
 import inputErrors from '../../../utils/input-errors';
 
 import InputError from './components/input-error.js';
-import { TextInput, Box } from 'grommet';
+import { TextInput, Box, FormField } from 'grommet';
+
 
 class Input extends Component {
   constructor(props) {
@@ -75,7 +76,6 @@ class Input extends Component {
 
   render() {
     const {
-      className,
       id,
       label,
       isDisabled,
@@ -90,24 +90,24 @@ class Input extends Component {
     const showError = hasBlurred && !isVirgin && currentError ? true : false;
 
     return (
-      <Box wrap align="center" width="medium">
-        <TextInput
-          {...otherProps}
-          signup
-          dark
-          id={id}
-          disabled={isDisabled}
-          type={type}
-          value={value}
-          variant={variant}
-          showError={showError}
-          onChange={this.handleChange}
-          onBlur={this.handleBlur}
-          placeholder={placeholder}
-          label={label}
-          className={className}
-          margin="normal"
-        />
+      <Box >
+        <FormField label={placeholder}>
+          <TextInput
+            {...otherProps}
+            signup
+            dark
+            id={id}
+            disabled={isDisabled}
+            type={type}
+            value={value}
+            variant={variant}
+            showError={showError}
+            onChange={this.handleChange}
+            onBlur={this.handleBlur}
+            label={label}
+            margin="normal"
+          />
+        </FormField>
         <InputError errors={errors} currentError={currentError} />
       </Box>
     );

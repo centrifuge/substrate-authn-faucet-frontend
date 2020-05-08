@@ -28,7 +28,7 @@ export const isValid = isValidForm => {
     true
   );
 };
-  
+
 
 export const updateField = (field, value, error) => {
   return function(dispatch, getState) {
@@ -40,14 +40,14 @@ export const updateField = (field, value, error) => {
         [field]: value
       }
     };
-  
+
     const isValidForm = {
       ...signupForm.isValidForm,
       ...{
         [field]: !error
       }
     };
-  
+
     const updatedSignupForm = {
       ...signupForm,
       ...{
@@ -56,7 +56,7 @@ export const updateField = (field, value, error) => {
         isValidForm
       }
     };
-  
+
     dispatch(updateFormField(updatedSignupForm));
   };
 };
@@ -89,12 +89,12 @@ export const signupRequest = () => {
     }
   };
 };
-  
+
 export const getRandomString = async () => {
   const randomString = await getLocalStorage('randomString');
   return randomString;
 };
-  
+
 export const setStateError = (stateError) => {
   return async () => {
     await setLocalStorage('stateError', stateError);
@@ -104,10 +104,9 @@ export const setStateError = (stateError) => {
 export const getCountryList = () => {
   return async () => {
     const sortedList = sortByKey(contryList.default, 'COUNTRY');
-    const contries = sortedList.map(c => {
+    const countries = sortedList.map(c => {
       return { value: c.ISO, label: c.COUNTRY};
     });
-    return contries;
+    return countries;
   };
 };
-  

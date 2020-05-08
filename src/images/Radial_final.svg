@@ -1,0 +1,4 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 64C0 28.65 28.65 0 64 0C99.35 0 128 28.65 128 64C128 99.35 99.35 128 64 128C28.65 128 0 99.35 0 64ZM8 64C8 94.95 33.05 120 64 120C94.95 120 120 94.95 120 64C120 33.05 94.95 8 64 8C33.05 8 8 33.05 8 64Z" fill="#FCBA59"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M88 40H40V88H56V56H88V40Z" fill="#FCBA59"/>
+</svg>

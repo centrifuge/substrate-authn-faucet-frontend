@@ -6,7 +6,7 @@ import { AxisTheme } from '@centrifuge/axis-theme';
 import Grid from '../Grid';
 import Column from '../Column';
 import FullWidthContainer from '../FullWidthContainer';
-import Medium2020_Faucet_img from '../../images/Medium2020_Faucet-19.png';
+import Medium2020_Faucet_img from '../../images/Medium2020_Faucet-19.svg';
 
 export default function FaucetHero({ handleGithubLogin, stateError }) {
   return (

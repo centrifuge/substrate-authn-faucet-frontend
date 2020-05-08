@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
-// import SecureRoute from './secure-route.container';
 
 class Router extends Component {
   componentDidMount() {

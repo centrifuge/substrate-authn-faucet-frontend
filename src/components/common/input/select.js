@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { getCurrentError } from './helpers.js';
 import inputErrors from '../../../utils/input-errors';
 import InputError from './components/input-error.js';
-import { Select, Box } from 'grommet';
+import { Select, Box, FormField } from 'grommet';
 
 class SelectOption extends Component {
   constructor(props) {
@@ -86,7 +86,7 @@ class SelectOption extends Component {
     const { hasBlurred, isVirgin, currentError, errors } = this.state;
     const showError = hasBlurred && !isVirgin && currentError ? true : false;
     return (
-      <Box wrap align="center" width="medium">
+      <Box><FormField label={placeholder}>
         <Select
           {...otherProps}
           id={id}
@@ -98,12 +98,13 @@ class SelectOption extends Component {
           options={options}
           onChange={this.handleChange}
           onBlur={this.handleBlur}
-          placeholder={placeholder}
+          placeholder=''
           label={label}
           className={className}
           margin="normal"
         />
-        <InputError errors={errors} currentError={currentError} />
+      </FormField>
+      <InputError errors={errors} currentError={currentError} />
       </Box>
     );
   }

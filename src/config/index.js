@@ -13,7 +13,6 @@ const prod = {
   REDIRECT_URI: process.env.REDIRECT_URI, // 'https://host.domain/github/callback',
   POLKASCAN_URI: process.env.POLKASCAN_URI //'https://polkascan.io/pre/centrifuge-amber-cc2/transaction/'
 };
-
 const config =
   currentEnv === 'production'
     ? prod

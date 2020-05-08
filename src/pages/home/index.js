@@ -29,7 +29,6 @@ class Home extends Component {
 
   handleGithubLogin = async () => {
     const randomString = makeRandomString(12);
-    console.log(randomString);
     const { setRandomString } = this.props;
     await setRandomString(randomString);
     window.location.href = `https://github.com/login/oauth/authorize?client_id=${config.GITHUB_CLIENT_ID}&redirect_uri=${config.REDIRECT_URI}&state=${randomString}`;

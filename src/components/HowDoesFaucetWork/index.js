@@ -7,14 +7,14 @@ import Column from '../Column';
 import Container from '../Container';
 import FullWidthContainer from '../FullWidthContainer';
 
-import Radial_final_img from '../../images/Radial_final.png';
+import Radial_final_img from '../../images/Radial_final.svg';
 
 export default function HowDoesFaucetWork() {
   return (
     <>
       <Container>
         <Grid noMargin pt='50px' align='start'>
-          <Column gap='small'> 
+          <Column gap='small'>
             <div>
               <Heading level={2} lined>
                 {data.heading}

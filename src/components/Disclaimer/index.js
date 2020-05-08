@@ -7,22 +7,21 @@ import Container from '../Container';
 
 export default function Disclaimer() {
   return (
-    <>
-      <Container>
-        <Grid noMargin pt='50px' pb='50px' align='start'>
-          <Column>
-            <div>
-              <Heading level={2} lined>
-                {data.heading}
-              </Heading>
-              <Paragraph>{data.paragraphOne}</Paragraph>
-              <br />
-              <Paragraph>{data.paragraphTwo}</Paragraph>
-            </div>
-          </Column>
-        </Grid>
-      </Container>
-    </>
+    <Container>
+      <Grid noMargin pt='50px' pb='50px' align='start'>
+        <Column>
+          <div>
+            <Heading level={2}>
+              {data.heading}
+            </Heading>
+            <hr />
+            <Paragraph>{data.paragraphOne}</Paragraph>
+            <br />
+            <Paragraph>{data.paragraphTwo}</Paragraph>
+          </div>
+        </Column>
+      </Grid>
+    </Container>
   );
 }
 

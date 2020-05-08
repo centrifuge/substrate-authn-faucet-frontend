@@ -1,25 +1,16 @@
+
 import React from 'react';
 import styled from 'styled-components';
-import { Box, Paragraph, Image, Text} from 'grommet';
+import { Paragraph, Text} from 'grommet';
 
 import { List, Item } from '../List';
-import { ExternalLink, InternalLink } from '../Links';
-
-import euFlagImage from '../../images/eu-flag.svg';
+import { ExternalLink } from '../Links';
 
 const FooterExternalLinkItem = ({ children, href, ...rest }) => (
   <FooterItem>
     <ExternalLink href={href} {...rest}>
       {children}
     </ExternalLink>
-  </FooterItem>
-);
-
-const FooterLinkItem = ({ children, to, ...rest }) => (
-  <FooterItem>
-    <InternalLink to={to} {...rest}>
-      {children}
-    </InternalLink>
   </FooterItem>
 );
 
@@ -54,12 +45,6 @@ const BlockInternalLink = () => (
     <List>
       <FooterExternalLinkItem href="https://centrifuge.io/aboit">About</FooterExternalLinkItem>
       <FooterExternalLinkItem href="https://centrifuge.io/imprint">Imprint</FooterExternalLinkItem>
-      <br /><br />
-      <FooterLinkItem to="/grant">
-        <Box direction="row">
-          <Image height={42} src={euFlagImage}/>
-        </Box>
-      </FooterLinkItem>
     </List>
   </Item>
 );

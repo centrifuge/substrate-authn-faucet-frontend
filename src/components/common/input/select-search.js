@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 import { getCurrentError } from './helpers.js';
 import inputErrors from '../../../utils/input-errors';
 import InputError from './components/input-error.js';
-import { Select, Box } from 'grommet';
+import { Box } from 'grommet';
+import {SearchSelect} from '@centrifuge/axis-search-select';
+import { FormField } from 'grommet';
+import {AxisTheme} from '@centrifuge/axis-theme';
 
 class SelectSearch extends Component {
   constructor(props) {
@@ -19,8 +22,6 @@ class SelectSearch extends Component {
       defaultOptions: []
     };
 
-    this.handleBlur = this.handleBlur.bind(this);
-    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount () {
@@ -31,7 +32,7 @@ class SelectSearch extends Component {
   static getDerivedStateFromProps(props, state) {
     const { reset, forceValidation, value, options } = props;
     const { errors, defaultOptions } = state;
-    
+
     if(options && options.length > 0 && defaultOptions.length === 0) {
       return { ...state, defaultOptions: options };
     }
@@ -57,36 +58,9 @@ class SelectSearch extends Component {
     return state;
   }
 
-  handleBlur() {
-    const { value, onInputChange } = this.props;
-    const { errors } = this.state;
-
-    const error = getCurrentError(value, errors);
-    this.setState({
-      hasBlurred: true,
-      isVirgin: false,
-      currentError: error,
-      defaultOptions: []
-    });
-    onInputChange(value, error);
-  }
-
-  handleSearchOptions(defaultOptions) {
-    this.setState({ defaultOptions });
-  }
-
-  handleChange(value) {
-    const { onInputChange } = this.props;
-    const { errors } = this.state;
-
-    const error = getCurrentError(value, errors);
-    this.setState({ currentError: error, defaultOptions: [] });
-    onInputChange(value.value, error);
-  }
 
   render() {
     const {
-      className,
       id,
       label,
       labelKey,
@@ -94,14 +68,16 @@ class SelectSearch extends Component {
       value,
       placeholder,
       variant,
-      // options,
+      options,
       ...otherProps
     } = this.props;
-    const { hasBlurred, isVirgin, currentError, errors, defaultOptions } = this.state;
+    const { hasBlurred, isVirgin, currentError, errors } = this.state;
     const showError = hasBlurred && !isVirgin && currentError ? true : false;
     return (
-      <Box wrap align="center" width="medium">
-        <Select
+
+      <Box><AxisTheme><FormField label={placeholder}>
+        <SearchSelect
+          required
           {...otherProps}
           id={id}
           disabled={isDisabled}
@@ -109,35 +85,27 @@ class SelectSearch extends Component {
           value={value}
           variant={variant}
           showError={showError}
-          options={defaultOptions}
-          onChange={this.handleChange}
-          onBlur={this.handleBlur}
-          placeholder={placeholder}
+          options={options}
+          placeholder=''
           label={label}
-          className={className}
-          margin="normal"
-          onSearch={text => {
-            // The line below escapes regular expression special characters:
-            // [ \ ^ $ . | ? * + ( )
-            const escapedText = text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
-            const exp = new RegExp(escapedText, 'i');
-            this.handleSearchOptions(defaultOptions.filter(o => exp.test(o.label)));
-          }}
         />
-        <InputError errors={errors} currentError={currentError} />
+      </FormField></AxisTheme>
+      <InputError errors={errors} currentError={currentError} />
+
       </Box>
+
     );
   }
 }
 
-SelectSearch.displayName = 'SelectSearch';
+// SelectSearch.displayName = 'SelectSearch';
 SelectSearch.propTypes = {
   id: PropTypes.string.isRequired,
   label: PropTypes.any,
   labelColor: PropTypes.oneOf(['black', 'white']),
   value: PropTypes.string,
   variant: PropTypes.string,
-  onInputChange: PropTypes.func,
+  onChange: PropTypes.func,
   className: PropTypes.string,
   forceValidation: PropTypes.bool,
   isRequired: PropTypes.bool,
@@ -158,7 +126,6 @@ SelectSearch.defaultProps = {
   isDisabled: false,
   isRequired: false,
   reset: false,
-  variant: 'filled',
   extraErrors: [],
   className: '',
   placeholder: '',
