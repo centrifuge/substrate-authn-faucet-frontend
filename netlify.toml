@@ -1,9 +1,5 @@
-[build]
-  publish = "build/"
-  command = "npm run build"
 [context.production]
-  environment = { "NODE_ENV" = "production"}
-
+  environment = { NODE_VERSION = "12.12.0",}
 [[redirects]]
   from = "/github/callback"
   to = "/"
