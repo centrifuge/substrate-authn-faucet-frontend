@@ -5,38 +5,35 @@ import { AxisTheme } from '@centrifuge/axis-theme';
 
 import Grid from '../Grid';
 import Column from '../Column';
-import FullWidthContainer from '../FullWidthContainer';
 import Medium2020_Faucet_img from '../../images/Medium2020_Faucet-19.svg';
 
 export default function FaucetHero({ handleGithubLogin, stateError }) {
   return (
     <AxisTheme>
-      <FullWidthContainer>
-        <Grid noMargin pt="50px" pb="50px">
-          <Column justifySelf='stretch' span={{ medium: 5, large: 5 }}>
-            <Image src={Medium2020_Faucet_img} />
-          </Column>
+      <Grid noMargin pt="50px" pb="50px">
+        <Column justifySelf='start' span={{ medium: 5, large: 5 }}>
+          <Image src={Medium2020_Faucet_img} />
+        </Column>
 
-          <Column span={{ medium: 2, large: 2 }} />
+        <Column span={{ medium: 2, large: 2 }} />
 
-          <Column span={{ medium: 5, large: 5 }} textAlign="center">
-            <Content>
-              <Heading level={1}>{data.heading}</Heading>
-              <Button primary label="Login with Github" onClick={handleGithubLogin}/>
-              <Paragraph style={{ color: 'red' }} pad={{ top: 'xxsmall', left: 'medium' }}>{stateError}</Paragraph>
-              <Paragraph pad={{ top: 'xxsmall', left: 'medium' }}>{data.paragraph}</Paragraph>
-            </Content>
-          </Column>
-        </Grid>
-      </FullWidthContainer>
+        <Column span={{ medium: 5, large: 5 }}  textAlign="center" justifySelf="end" width="75%">
+          <Content>
+            <Heading margin={{ bottom: 'medium' }} level={3}>{data.heading}</Heading>
+            <Paragraph margin={{ bottom: 'medium' }} pad={{ top: 'xxsmall', left: 'medium' }} size="xxlarge">{data.paragraph}</Paragraph>
+            <Button margin={{ bottom: 'medium' }} primary label="Login with Github" onClick={handleGithubLogin}/>
+            <Paragraph style={{ color: 'red' }} pad={{ top: 'xxsmall', left: 'medium' }}>{stateError}</Paragraph>
+          </Content>
+        </Column>
+      </Grid>
     </AxisTheme>
   );
 }
 
 const data = {
-  heading: 'Centrifuge Authenticated Faucet',
+  heading: 'Centrifuge Radial Faucet',
   paragraph:
-    'Unlock the value of your real-world assets in the decentralized finance ecosystem. '
+    'Get Radial tokens to interact with Centrifuge Chain and unlock the value of your real-world assets in the decentralized finance ecosystem.'
 };
 
 const Content = styled.div`
@@ -47,7 +44,7 @@ const Content = styled.div`
     @media only screen and (max-width: 768px) {
       margin-bottom: 41px;
     }
-  }
+  }f
 
   p {
     margin-top: 23px;
