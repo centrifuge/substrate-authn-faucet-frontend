@@ -14,14 +14,15 @@ export default function HowDoesFaucetWork() {
     <>
       <Container>
         <Grid noMargin pt='50px' align='start'>
-          <Column gap='small'>
+          <Column gap='small' margin="large">
             <div>
-              <Heading level={2} lined>
+              <Heading level={5} lined margin={{ bottom: 'large' }}>
                 {data.heading}
               </Heading>
-              <Paragraph>{data.paragraph1}</Paragraph>
-              <Paragraph margin={{ top: 'small' }}>{data.paragraph2}</Paragraph>
-              <Paragraph margin={{ top: 'small' }}>{data.paragraph3}</Paragraph>
+              <hr  />
+              <Paragraph margin={{ top: 'large' }}>{data.paragraph1}</Paragraph>
+              <Paragraph margin={{ top: 'medium' }}>{data.paragraph2}</Paragraph>
+              <Paragraph margin={{ top: 'medium' }}>{data.paragraph3}</Paragraph>
             </div>
           </Column>
         </Grid>

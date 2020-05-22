@@ -9,15 +9,14 @@ export default function Disclaimer() {
   return (
     <Container>
       <Grid noMargin pt='50px' pb='50px' align='start'>
-        <Column>
+        <Column margin="large">
           <div>
-            <Heading level={2}>
+            <Heading level={5} margin={{ bottom: 'large' }}>
               {data.heading}
             </Heading>
             <hr />
-            <Paragraph>{data.paragraphOne}</Paragraph>
-            <br />
-            <Paragraph>{data.paragraphTwo}</Paragraph>
+            <Paragraph margin={{ top: 'large' }}>{data.paragraphOne}</Paragraph>
+            <Paragraph margin={{ top: 'medium' }}>{data.paragraphTwo}</Paragraph>
           </div>
         </Column>
       </Grid>
