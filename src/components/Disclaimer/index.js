@@ -8,7 +8,7 @@ import Container from '../Container';
 export default function Disclaimer() {
   return (
     <Container>
-      <Grid noMargin pt='50px' pb='50px' align='start'>
+      <Grid noMargin align='start'>
         <Column margin="large">
           <div>
             <Heading level={5} margin={{ bottom: 'large' }}>
