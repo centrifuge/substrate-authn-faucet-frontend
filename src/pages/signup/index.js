@@ -190,7 +190,7 @@ class Signup extends Component {
             </Box>
             <Box pad={{ top: 'xxsmall', left: 'none' }} align="start" gap="large">
               <Box direction="row" wrap align="start" gap="large">
-                <Text>** if you don&apos;t have Centrifuge Chain address, create one using our documentation</Text>
+                <Text>** if you don&apos;t have Centrifuge Chain address, create one by following the <a href="https://developer.centrifuge.io/chain/get-started/account/">documentation</a></Text>
               </Box>
             </Box>
             <Box pad="large" align="center" gap="large">
