@@ -77,7 +77,7 @@ class Signup extends Component {
             </Box>
             <Box pad={{top: 'large', bottom: 'large'}} align="start" gap="none">
               <Box direction="row" wrap align="start" gap="large">
-                <Text size="large">Please add a few more detail to continue:</Text>
+                <Text size="large">Please add a few more details to continue:</Text>
               </Box>
             </Box>
 
@@ -139,7 +139,7 @@ class Signup extends Component {
                   size="medium"
                   required
                   id="country"
-                  placeholder="Country of Operation *"
+                  placeholder="Country of Operation/Residence *"
                   options={countryList}
                   labelKey="label"
                   forceValidation={forceValidation}
@@ -171,7 +171,7 @@ class Signup extends Component {
               <AxisTheme>
                 <CheckBox
                   id='toc_and_privacy'
-                  label={<label>You agree to the <a href='https://centrifuge.io/data-privacy-policy'>Terms of Service</a> and the <a href="https://centrifuge.io/data-privacy-policy">Privacy Policy</a></label>}
+                  label={<label>I agree to the <a href='https://centrifuge.io/data-privacy-policy'>Terms of Service</a> and the <a href="https://centrifuge.io/data-privacy-policy">Privacy Policy</a></label>}
                   value={form.toc_and_privacy}
                   isRequired
                   reset={reset}
@@ -185,7 +185,7 @@ class Signup extends Component {
 
             <Box pad={{ top: 'medium', left: 'none' }} align="start" gap="large">
               <Box direction="row" wrap align="start" gap="large">
-                <Text>* This faucet is not currently available for US Citizens or Residents or Residents of China or South Korea</Text>
+                <Text>* This faucet is not currently available for US Citizens, US Residents, or Residents of China and South Korea</Text>
               </Box>
             </Box>
             <Box pad={{ top: 'xxsmall', left: 'none' }} align="start" gap="large">
