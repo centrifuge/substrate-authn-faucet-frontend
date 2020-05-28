@@ -77,7 +77,7 @@ class Signup extends Component {
             </Box>
             <Box pad={{top: 'large', bottom: 'large', left: 'large'}} align="start" gap="none">
               <Box direction="row" wrap align="start" gap="large">
-                <Text size="large">Please add a few more detail to continue:</Text>
+                <Text size="large">Please add a few more details to continue:</Text>
               </Box>
             </Box>
             { success == null ?
