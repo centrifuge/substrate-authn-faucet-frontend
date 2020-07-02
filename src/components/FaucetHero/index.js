@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Heading, Paragraph, Button } from 'grommet';
+import { Heading, Paragraph, Button, Anchor} from 'grommet';
 import { AxisTheme } from '@centrifuge/axis-theme';
 
 import Grid from '../Grid';
@@ -23,6 +23,8 @@ export default function FaucetHero({ handleGithubLogin, stateError }) {
             <Paragraph margin={{ bottom: 'medium' }} pad={{ top: 'xxsmall', left: 'medium' }} size="xxlarge">{data.paragraph}</Paragraph>
             <Button margin={{ bottom: 'medium' }} primary label="Login with Github" onClick={handleGithubLogin}/>
             <Paragraph style={{ color: 'red' }} pad={{ top: 'xxsmall', left: 'medium' }}>{stateError}</Paragraph>
+            <Paragraph pad={{ top: 'xxsmall', left: 'medium' }} size="large">{data.issue}</Paragraph>
+            <Anchor margin={{ bottom: 'medium' }} href="mailto:faucet@centrifuge.foundation">faucet@centrifuge.foundation</Anchor>
           </Content>
         </Column>
       </Grid>
@@ -33,7 +35,9 @@ export default function FaucetHero({ handleGithubLogin, stateError }) {
 const data = {
   heading: 'Centrifuge Radial Faucet',
   paragraph:
-    'Get Radial tokens to interact with Centrifuge Chain and unlock the value of your real-world assets in the decentralized finance ecosystem.'
+    'Get Radial tokens to interact with Centrifuge Chain and unlock the value of your real-world assets in the decentralized finance ecosystem.',
+  issue:
+    'Having issues? Please contact us at '
 };
 
 const Content = styled.div`
