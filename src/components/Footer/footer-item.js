@@ -54,9 +54,9 @@ const BlockInternalLink = () => (
     <List>
       <Box justify="between">
         <Box>
-          <FooterLinkItem to="/data-privacy-policy">
+          <FooterExternalLinkItem href="https://ir.centrifuge.io/data-privacy-policy">
             Data Privacy Policy
-          </FooterLinkItem>
+          </FooterExternalLinkItem>
         </Box>
       </Box>
     </List>
