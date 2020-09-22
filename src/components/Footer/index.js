@@ -4,7 +4,11 @@ import { Box, ResponsiveContext } from 'grommet';
 
 import { List } from '../List';
 import Container from '../Container';
-import { BlockHello, BlockCopyRight, BlockExternalLink, BlockInternalLink } from './footer-item';
+import {
+  BlockCopyRight,
+  BlockExternalLink,
+  BlockInternalLink,
+} from './footer-item';
 
 const FooterContent = styled(List)`
   display: flex;
@@ -28,43 +32,30 @@ const FooterContent = styled(List)`
   }
 `;
 
-const TwoColumnBox = styled(Box)`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-`;
-
 const Footer = () => (
   <Box background="black" as="footer" pad={{ top: 'xlarge', bottom: 'large' }}>
     <Container>
-
       <ResponsiveContext.Consumer>
         {size =>
-          size === 'small'
-            ? (
-              <FooterContent>
-                <BlockHello/>
-                <br/>
-                <TwoColumnBox>
-                  <BlockExternalLink/>
-                  <BlockInternalLink/>
-                </TwoColumnBox>
-                <br/>
+          size === 'small' ? (
+            <FooterContent>
+              <Box direction="row" gap="large">
+                <BlockExternalLink />
+                <BlockInternalLink />
+              </Box>
+              <BlockCopyRight size={size} />
+            </FooterContent>
+          ) : (
+            <FooterContent>
+              <Box>
                 <BlockCopyRight size={size} />
-              </FooterContent>
-            ) : (
-              <FooterContent>
-                <Box>
-                  <BlockHello/>
-                  <br/>
-                  <BlockCopyRight size={size} />
-                </Box>
-                <BlockExternalLink/>
-                <BlockInternalLink/>
-              </FooterContent>
-            )
+              </Box>
+              <BlockExternalLink />
+              <BlockInternalLink />
+            </FooterContent>
+          )
         }
       </ResponsiveContext.Consumer>
-
     </Container>
   </Box>
 );

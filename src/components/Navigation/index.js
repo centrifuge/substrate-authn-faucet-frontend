@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Button, Layer as GrommetLayer, ResponsiveContext } from 'grommet';
+import { Box, Button, Layer as GrommetLayer, ResponsiveContext, Text, Anchor } from 'grommet';
 import styled, { css } from 'styled-components';
 import { breakpointStyle } from 'grommet/utils';
 import { X } from 'styled-icons/feather/X';
@@ -220,31 +220,18 @@ class Navigation extends React.Component {
 
               {/* Desktop Nav */}
               <Dropdowns direction='row' align='center' gap='large'>
-
-
                 <PaddedItem>
-                  <ExternalNavLink href='https://centrifuge.io/'>
-                  About
-                  </ExternalNavLink>
+                  <Text>
+                    go to{' '}
+                    <Anchor
+                      target="_blank"
+                      rel="noreferrer noopnener"
+                      href="https://centrifuge.io"
+                    >
+                      centrifuge.io
+                    </Anchor>
+                  </Text>
                 </PaddedItem>
-
-                {/* Call To Action */}
-                <Item>
-                  {/* <AxisTheme> */}
-                  <Button
-                    label='Learn More'
-                    default
-                    href='https://centrifuge.io/getstarted/'
-                    style={{
-                      paddingTop: '5px',
-                      paddingBottom: '5px',
-                      paddingLeft: '30px',
-                      paddingRight: '30px',
-                      fontSize: 14
-                    }}
-                  />
-                  {/* </AxisTheme> */}
-                </Item>
               </Dropdowns>
             </List>
           </Container>

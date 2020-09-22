@@ -1,16 +1,23 @@
-
 import React from 'react';
 import styled from 'styled-components';
-import { Paragraph, Text} from 'grommet';
+import { Box, Paragraph, Text } from 'grommet';
 
 import { List, Item } from '../List';
-import { ExternalLink } from '../Links';
+import { ExternalLink, InternalLink } from '../Links';
 
 const FooterExternalLinkItem = ({ children, href, ...rest }) => (
   <FooterItem>
     <ExternalLink href={href} {...rest}>
       {children}
     </ExternalLink>
+  </FooterItem>
+);
+
+const FooterLinkItem = ({ children, to, ...rest }) => (
+  <FooterItem>
+    <InternalLink to={to} {...rest}>
+      {children}
+    </InternalLink>
   </FooterItem>
 );
 
@@ -21,21 +28,23 @@ const FooterItem = styled(Item)`
 const BlockExternalLink = () => (
   <Item>
     <List>
-      <FooterExternalLinkItem href="https://twitter.com/centrifuge">
-        Twitter
-      </FooterExternalLinkItem>
-      <FooterExternalLinkItem href="https://medium.com/centrifuge">
-        Medium
-      </FooterExternalLinkItem>
-      <FooterExternalLinkItem href="https://centrifuge.io/slack">
-        Slack
-      </FooterExternalLinkItem>
-      <FooterExternalLinkItem href="https://github.com/centrifuge/">
-        GitHub
-      </FooterExternalLinkItem>
-      <FooterExternalLinkItem href="https://developer.centrifuge.io/">
-        Documentation
-      </FooterExternalLinkItem>
+      <Box justify="between">
+        <Box>
+          <FooterExternalLinkItem href="https://twitter.com/centrifuge">
+            Twitter
+          </FooterExternalLinkItem>
+          <FooterExternalLinkItem href="https://medium.com/centrifuge">
+            Medium
+          </FooterExternalLinkItem>
+          <FooterLinkItem to="/slack">Slack</FooterLinkItem>
+          <FooterExternalLinkItem href="https://github.com/centrifuge/">
+            GitHub
+          </FooterExternalLinkItem>
+          <FooterExternalLinkItem href="https://developer.centrifuge.io/">
+            Documentation
+          </FooterExternalLinkItem>
+        </Box>
+      </Box>
     </List>
   </Item>
 );
@@ -43,23 +52,37 @@ const BlockExternalLink = () => (
 const BlockInternalLink = () => (
   <Item>
     <List>
-      <FooterExternalLinkItem href="https://centrifuge.io/aboit">About</FooterExternalLinkItem>
-      <FooterExternalLinkItem href="https://centrifuge.io/imprint">Imprint</FooterExternalLinkItem>
+      <Box justify="between">
+        <Box>
+          <FooterLinkItem to="/data-privacy-policy">
+            Data Privacy Policy
+          </FooterLinkItem>
+        </Box>
+      </Box>
     </List>
   </Item>
 );
 
-const BlockHello = () => (
-  <Text>The Radial Faucet is operated by the Centrifuge Network Foundation. </Text>
+const SubBlockContact = ({ title, email }) => (
+  <Box direction="row" gap="xsmall" align="start">
+    <Text weight="bold">{title}:</Text>
+    <FooterExternalLinkItem href={`mailto:${email}`}>
+      {email}
+    </FooterExternalLinkItem>
+  </Box>
 );
 
-const BlockCopyRight = ({ size }) => (
+const BlockHello = () => (
+  <>
+    <SubBlockContact title="General" email="hello@centrifuge.io" />
+    <SubBlockContact title="Press, Events, Media" email="comms@centrifuge.io" />
+    <SubBlockContact title="Partnerships" email="bizdev@centrifuge.io" />
+  </>
+);
+
+const BlockCopyRight = () => (
   <Paragraph style={{ fontSize: 12 }}>
-    Except where otherwise noted, content on this site is licensed under {size === 'small' ? null : <br />} a{' '}
-    <ExternalLink href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noreferrer noopener">
-      Creative Commons Attribution-ShareAlike 4.0 International
-    </ExternalLink>
-    {' '}license
+    Centrifuge Network Foundation © 2020
   </Paragraph>
 );
 
